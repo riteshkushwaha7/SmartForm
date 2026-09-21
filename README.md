@@ -26,4 +26,4 @@ The `extension/` folder is the complete distributable application. No server or 
 
 ## Project ownership
 
-SmartForm is a Major Project for UIT RGPV, Information Technology — 2027 Passout Batch. Team: Ritesh Kushwaha, Aman Kumar Patel, Mehek Choudhary, and Devansh Tiwari. See [LICENSE](LICENSE) for the project usage notice; third-party dependencies remain under their own licenses.
+SmartForm is a Major Project for UIT RGPV, Information Technology — 2027 Passout Batch. Team: Ritesh Kushwaha, Aman Kumar Patel, Mahek Choudhary, and Devansh Tiwari. See [LICENSE](LICENSE) for the project usage notice; third-party dependencies remain under their own licenses.
