@@ -9,7 +9,6 @@ suggestion.md
 !.env.example
 !*.env.example
 
-# Local backend runtime data
-backend/smartform.db
-backend/.venv/
+# Generated dependencies
+dashboard/node_modules/
 node_modules/
