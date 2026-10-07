@@ -1,3 +1,46 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>SmartForm Dashboard</title><link rel="stylesheet" href="dashboard.css"></head>
-<body><aside><div class="brand">SmartForm</div><p>Local extension dashboard</p><button data-page="overview">Overview</button><button data-page="profile">Personal & contact</button><button data-page="identity">Identity & passwords</button><button data-page="education">Education & marks</button><button data-page="documents">Documents & images</button><button data-page="professional">Projects & profiles</button><button data-page="ai">AI settings</button><button data-page="history">History</button><button data-page="about">About project</button></aside><main><header><div><span>LOCAL-FIRST FORM ASSISTANT</span><h1 id="title">Overview</h1></div><div class="status">Extension vault active</div></header><div id="notice"></div><section id="app"></section></main><script src="dashboard.js"></script></body></html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <title>SmartForm dashboard</title>
+  </head>
+  <body>
+    <aside>
+      <div class="brand"><span>✦</span> SmartForm</div>
+      <p>Local application companion</p>
+      <nav>
+        <button data-page="overview"><span>⌂</span>Overview</button>
+        <button data-page="jobs"><span>⌕</span>Job Finder</button>
+        <button data-page="saved"><span>♡</span>Saved Jobs</button>
+        <button data-page="applications">
+          <span>✓</span>Application History
+        </button>
+        <div class="nav-label">Vault</div>
+        <button data-page="profile">Personal & Contact</button
+        ><button data-page="identity">Identity & Passwords</button
+        ><button data-page="education">Education & Marks</button
+        ><button data-page="documents">Documents & Resumes</button
+        ><button data-page="professional">Projects & Profiles</button>
+        <div class="nav-label">SmartForm</div>
+        <button data-page="ai">AI Settings</button
+        ><button data-page="history">Fill History</button
+        ><button data-page="privacy">Privacy</button
+        ><button data-page="about">About Project</button>
+      </nav>
+    </aside>
+    <main>
+      <header>
+        <div>
+          <span>SMARTFORM WORKSPACE</span>
+          <h1 id="title">Overview</h1>
+        </div>
+        <div class="status"><i></i> Extension Vault Active</div>
+      </header>
+      <div id="notice"></div>
+      <section id="app"></section>
+    </main>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

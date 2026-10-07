@@ -1,1 +1,27 @@
-{"manifest_version":3,"name":"SmartForm — Local Form Assistant","version":"0.2.1","description":"Privacy-first context-aware form filling. Never submits forms.","action":{"default_popup":"popup.html","default_title":"SmartForm"},"background":{"service_worker":"background.js"},"content_scripts":[{"matches":["http://*/*","https://*/*","file:///*"],"js":["content.js"],"css":["content.css"],"run_at":"document_idle"}],"permissions":["activeTab","storage","tabs","unlimitedStorage"],"host_permissions":["https://openrouter.ai/*"],"content_security_policy":{"extension_pages":"script-src 'self'; object-src 'self'; connect-src https://openrouter.ai"}}
+{
+  "manifest_version": 3,
+  "name": "SmartForm — Local Form Assistant",
+  "version": "2.1",
+  "description": "Privacy-first form filling and multi-source local job tracking. Never submits forms.",
+  "action": { "default_popup": "popup.html", "default_title": "SmartForm" },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "file:///*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["activeTab", "storage", "tabs", "unlimitedStorage"],
+  "host_permissions": [
+    "https://openrouter.ai/*",
+    "https://boards-api.greenhouse.io/*",
+    "https://api.lever.co/*",
+    "https://jobicy.com/*",
+    "https://www.arbeitnow.com/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://openrouter.ai https://boards-api.greenhouse.io https://api.lever.co https://jobicy.com https://www.arbeitnow.com"
+  }
+}
