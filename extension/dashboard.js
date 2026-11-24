@@ -194,7 +194,7 @@ function jobsPage() {
     <div class="search-context"><label>Profile<select id="jobProfile"><option>Default profile</option></select></label><label>Resume<select id="jobResume">${resumeOptions()}</select></label><details class="source-picker"><summary>Sources</summary><div><label class="check"><input data-source="greenhouse" type="checkbox" ${sources.greenhouse !== false ? "checked" : ""}> Direct Careers · Greenhouse</label><label class="check"><input data-source="lever" type="checkbox" ${sources.lever !== false ? "checked" : ""}> Direct Careers · Lever</label><label class="check"><input data-source="jobicy" type="checkbox" ${sources.jobicy !== false ? "checked" : ""}> Jobicy Remote</label><label class="check"><input data-source="arbeitnow" type="checkbox" ${sources.arbeitnow !== false ? "checked" : ""}> Arbeitnow fallback</label></div></details><label class="check"><input id="jobAi" type="checkbox" ${p.useAi ? "checked" : ""}> Enhance top matches with AI ${state.settings.apiKeyConfigured ? "" : "(key not configured)"}</label><label class="check"><input id="refreshSources" type="checkbox"> Refresh cached sources</label><label class="check"><input id="showHidden" type="checkbox"> Show hidden</label></div>
   </div>
   <div class="results-bar"><div><b id="resultCount">Opportunities</b><small id="resultSummary"></small></div><label>Sort<select id="jobSort"><option value="match">Best Match</option><option value="newest">Newest</option><option value="company">Company</option></select></label></div>
-  <div id="jobResults"></div><p class="privacy compact">Listings and application states stay in this browser. Optional AI receives only non-sensitive career context. SmartForm never submits applications.</p>`;
+  <div id="jobResults"></div><p class="privacy compact">Listings and application states stay in this browser. Optional AI receives only non-sensitive career context. FormPilot AI never submits applications.</p>`;
 }
 const jobUrl = (job) => job.applicationUrl || job.url || "";
 const searchable = (job) =>
@@ -394,7 +394,7 @@ async function jobAction(action, url) {
     drawJobs();
     msg(
       action === "open"
-        ? "Application page opened. Use SmartForm to scan and autofill, then review and submit manually."
+        ? "Application page opened. Use FormPilot AI to scan and autofill, then review and submit manually."
         : "Job status updated locally.",
     );
   } else msg(r.error || "Could not update this job.", "error");
@@ -462,10 +462,10 @@ function bindApplications() {
   );
 }
 function aboutPage() {
-  return `<div class="card"><h2>SmartForm</h2><p>A Major Project for UIT RGPV<br>Information Technology — 2027 Passout Batch</p><h3>Team</h3><p>Ritesh Kushwaha<br>Aman Kumar Patel<br>Mahek Choudhary<br>Devansh Tiwari</p></div>`;
+  return `<div class="card"><h2>FormPilot AI</h2><p>A Major Project for UIT RGPV<br>Information Technology — 2027 Passout Batch</p><h3>Team</h3><p>Ritesh Kushwaha<br>Aman Kumar Patel<br>Mahek Choudhary<br>Devansh Tiwari</p></div>`;
 }
 function privacyPage() {
-  return `<div class="card privacy-page"><span>PRIVACY</span><h2>Your application data stays with you</h2><p>Profiles, resumes, job results, saved jobs, hidden jobs, and application history are stored in <code>chrome.storage.local</code> in this browser profile.</p><h3>AI matching is optional</h3><p>When explicitly enabled, only non-sensitive career context is sent to OpenRouter. Passwords, OTPs, Aadhaar, PAN, passport details, identity documents, and private credentials are excluded.</p><h3>You stay in control</h3><p>SmartForm may open an external application page and help fill fields after you ask it to. It never submits an application. Always review the employer page and every filled value before manually submitting.</p></div>`;
+  return `<div class="card privacy-page"><span>PRIVACY</span><h2>Your application data stays with you</h2><p>Profiles, resumes, job results, saved jobs, hidden jobs, and application history are stored in <code>chrome.storage.local</code> in this browser profile.</p><h3>AI matching is optional</h3><p>When explicitly enabled, only non-sensitive career context is sent to OpenRouter. Passwords, OTPs, Aadhaar, PAN, passport details, identity documents, and private credentials are excluded.</p><h3>You stay in control</h3><p>FormPilot AI may open an external application page and help fill fields after you ask it to. It never submits an application. Always review the employer page and every filled value before manually submitting.</p></div>`;
 }
 function render(page) {
   msg("");
@@ -475,7 +475,7 @@ function render(page) {
   title.textContent = page.replaceAll("_", " ");
   let views = {
     overview: () =>
-      `<div class="hero"><span>SMARTFORM CONTROL CENTER</span><h1>Your data stays in the extension.</h1><p>Local profile, form filling, job discovery, and application tracking. SmartForm never submits forms.</p></div>`,
+      `<div class="hero"><span>FORMPILOT AI CONTROL CENTER</span><h1>Your data stays in the extension.</h1><p>Local profile, form filling, job discovery, and application tracking. FormPilot AI never submits forms.</p></div>`,
     jobs: jobsPage,
     saved: savedJobsPage,
     applications: applicationsPage,

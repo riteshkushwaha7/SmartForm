@@ -222,11 +222,11 @@ async function generate(question, pageContext) {
     );
   if (!key)
     throw Error(
-      "OpenRouter API key is not configured. Open SmartForm dashboard → AI settings and save your OpenRouter API key.",
+      "OpenRouter API key is not configured. Open FormPilot AI dashboard → AI settings and save your OpenRouter API key.",
     );
   let endpoint = `${OPENROUTER_BASE_URL}/chat/completions`,
     prompt = `Answer this application-form question in at most 150 words. Use only supplied non-sensitive profile context. Never invent facts. Return only the value to place in this field.\nQuestion: ${question}\nPage: ${String(pageContext || "").slice(0, 1500)}\nProfile:\n${context}`;
-  console.debug("SmartForm OpenRouter request", {
+  console.debug("FormPilot AI OpenRouter request", {
     hasKey: true,
     keyLength: key.length,
     endpoint,
@@ -255,7 +255,7 @@ async function generate(question, pageContext) {
   }
   if (!r.ok) {
     let detail = (await r.text()).slice(0, 180);
-    console.error("SmartForm OpenRouter error", {
+    console.error("FormPilot AI OpenRouter error", {
       status: r.status,
       endpoint,
       detail,
@@ -1197,7 +1197,7 @@ async function aiJobMatch(jobs, context, x) {
   }
   if (!r.ok) {
     const detail = (await r.text()).slice(0, 240);
-    console.warn("SmartForm AI job matching unavailable", {
+    console.warn("FormPilot AI job matching unavailable", {
       status: r.status,
       detail,
     });
@@ -1208,7 +1208,7 @@ async function aiJobMatch(jobs, context, x) {
     parsed = parseAIJobMatches(raw, jobs);
   if (!parsed.length) {
     console.warn(
-      "SmartForm AI job matching returned no valid structured matches",
+      "FormPilot AI job matching returned no valid structured matches",
       { contentPreview: String(raw || "").slice(0, 240) },
     );
     throw Error("ai_unavailable");
@@ -1260,7 +1260,7 @@ async function enhanceJobsWithAI() {
     };
   } catch (error) {
     console.warn(
-      "SmartForm AI enhancement fell back to local matching",
+      "FormPilot AI enhancement fell back to local matching",
       error?.message || error,
     );
     return { ok: false, unavailable: true };

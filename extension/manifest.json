@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "SmartForm — Local Form Assistant",
+  "name": "FormPilot AI — Your intelligent form-filling assistant",
   "version": "2.1",
   "description": "Privacy-first form filling and multi-source local job tracking. Never submits forms.",
-  "action": { "default_popup": "popup.html", "default_title": "SmartForm" },
+  "action": { "default_popup": "popup.html", "default_title": "FormPilot AI" },
   "background": { "service_worker": "background.js" },
   "content_scripts": [
     {
